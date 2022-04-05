@@ -1,15 +1,21 @@
+import org.bukkit.Bukkit
+import org.bukkit.ChatColor
 import org.bukkit.plugin.java.JavaPlugin
 
 class SafeHungerGames: JavaPlugin() {
     override fun onEnable() {
-        super.onEnable()
+        sendMessageWithPrefix("&a Plugin Enabled")
     }
 
     override fun onLoad() {
-        super.onLoad()
+        sendMessageWithPrefix("&a Plugin Loaded")
     }
 
     override fun onDisable() {
-        super.onDisable()
+        sendMessageWithPrefix("&c Plugin Disabled")
+    }
+
+    private fun sendMessageWithPrefix(message: String){
+        Bukkit.getServer().consoleSender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&7[&bSafe&6Hungergames&7] $message"))
     }
 }
