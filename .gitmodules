@@ -1,0 +1,6 @@
+[submodule "SafeKit"]
+	path = SafeKit
+	url = git@github.com:MuriloGhignatti/SafeKit.git
+[submodule "SafeUtils"]
+	path = SafeUtils
+	url = git@github.com:MuriloGhignatti/SafeUtils.git
