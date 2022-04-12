@@ -18,6 +18,8 @@ repositories {
 dependencies {
     testImplementation(kotlin("test"))
     compileOnly("org.spigotmc:spigot-api:1.18.2-R0.1-SNAPSHOT")
+    implementation(project(":SafeUtils"))
+    implementation(project(":SafeKit"))
 }
 
 tasks.test {

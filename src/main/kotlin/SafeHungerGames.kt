@@ -15,7 +15,7 @@ class SafeHungerGames: JavaPlugin() {
         sendMessageWithPrefix("&c Plugin Disabled")
     }
 
-    private fun sendMessageWithPrefix(message: String){
+    fun sendMessageWithPrefix(message: String){
         Bukkit.getServer().consoleSender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&7[&bSafe&6Hungergames&7] $message"))
     }
 }
