@@ -29,7 +29,8 @@ class KitController(private val mainInstance: SafeHungerGames, private val confi
                     kitPath = "${kitsPath.canonicalPath}/$it"
                     currentKit = JarFile(kitPath)
                     for (entry in currentKit.entries()) {
-                        if (entry.name.contentEquals("kitConfig.yml")) {if (kitsFolder.isNullOrBlank()) "${mainInstance.dataFolder.canonicalPath}/kits" else kitsFolder
+                        if (entry.name!!.contentEquals("kitConfig.yml")) {
+                            if (kitsFolder.isNullOrBlank()) "${mainInstance.dataFolder.canonicalPath}/kits" else kitsFolder
                             readConfigFile(ZipFile(kitPath).getInputStream(entry)).forEach { kitClassPath ->
                                 kitInstance = Class.forName(kitClassPath, true, URLClassLoader(Array<URL>(1){File(usedKitsFolderPath).toURI().toURL()}, javaClass.classLoader)).getDeclaredConstructor().newInstance() as SafeKit
                                 if(!kits.containsKey(kitInstance.kitName)){

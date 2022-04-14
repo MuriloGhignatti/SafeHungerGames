@@ -1,10 +1,17 @@
+import files.Config
 import org.bukkit.Bukkit
 import org.bukkit.ChatColor
 import org.bukkit.plugin.java.JavaPlugin
 
 class SafeHungerGames: JavaPlugin() {
+
+    val config: Config = Config()
+
+    val kitController: KitController = KitController(this, config)
+
     override fun onEnable() {
         sendMessageWithPrefix("&a Plugin Enabled")
+        kitController.loadKits()
     }
 
     override fun onLoad() {
